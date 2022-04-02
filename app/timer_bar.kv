@@ -1,0 +1,29 @@
+<TimerBar>:
+    height: 50
+    size_hint_y: None
+
+    MDIconButton:
+        icon: "timer-sand"
+    
+    MDIconButton:
+        icon: "play-outline"
+        on_press: root.start_timer()
+
+    MDIconButton:
+        icon: "crop-square"
+        on_press: root.stop_timer()
+
+    Spinner:
+        id: charge_code
+        szie_hint: None, None
+        size: 100, 50
+        text: "Select Charge Code"
+        values: ["Certifiable AI", "CSEL", "Battelab"]
+        on_text: root.charge_code_selected(charge_code.text)
+
+    Label:
+        id: timer
+        text: "00:00:00"
+
+    MDIconButton:
+        icon: "plus"

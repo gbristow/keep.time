@@ -1,4 +1,3 @@
-import imp
 import os
 from typing import Any
 
@@ -6,6 +5,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 from kivymd.app import MDApp
+
 
 class MainApp(MDApp):
     title = "keep.time"
@@ -16,7 +16,9 @@ class MainApp(MDApp):
         """
 
         Window.set_title("keep.time")
-        
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Gray"
+        self.theme_cls.accent_palette = "Red"
 
         for root, _, files in os.walk(os.path.join("app")):
             for file_ in files:
@@ -29,8 +31,8 @@ class MainApp(MDApp):
         pass
 
     def open_timer(self) -> None:
-        self.root.ids.timer.show()
-        print("Open Timer")
+        # self.root.ids.timer.show()
+        pass
 
 
 MainApp().run()

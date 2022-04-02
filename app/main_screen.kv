@@ -1,0 +1,26 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        TimerBar:
+            id: timer_bar
+
+        Widget:
+
+        MDBottomNavigation:
+            id: navigation
+
+            MDBottomNavigationItem:
+                name: 'time_events'
+                text: 'Events'
+                icon: 'calendar-clock'
+
+            MDBottomNavigationItem:
+                name: 'time_stats'
+                text: 'Stats'
+                icon: 'chart-line'
+
+            MDBottomNavigationItem:
+                name: 'timesheet'
+                text: 'Timesheet'
+                icon: 'file-table-box-outline'

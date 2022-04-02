@@ -1,4 +1,15 @@
-#:import MainLayout app.main_layout
+#:import MainScreen app.main_screen
 #:import EventTimer app.event_timer
+#:import TimerBar app.timer_bar
 
-MainLayout:
+BoxLayout:
+    ScreenManager:
+        id: manager
+
+        MainScreen:
+            name: "main"
+            id: main
+
+        #EventTimer:
+        #    name: "timer"
+        #    id: timer
