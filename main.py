@@ -1,10 +1,14 @@
+import imp
 import os
 from typing import Any
 
 from kivy.lang import Builder
 from kivy.core.window import Window
+from kivy.metrics import dp
 
 from kivymd.app import MDApp
+
+from app.main_screen import TimeEventTable
 
 
 class MainApp(MDApp):
@@ -28,7 +32,17 @@ class MainApp(MDApp):
         return Builder.load_file(os.path.join("main.kv"))
 
     def on_start(self):
-        pass
+        self.time_events = TimeEventTable(
+            use_pagination=True,
+            check=True,
+            column_data=[
+                ("Start Time", dp(60)),
+                ("Charge Code", dp(60)),
+                ("Duration", dp(30)),
+                ("Description", dp(60)),
+            ],
+        )
+        self.root.ids.main.ids.table_layout.add_widget(self.time_events)
 
     def open_timer(self) -> None:
         # self.root.ids.timer.show()
